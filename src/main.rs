@@ -1,16 +1,19 @@
-#[macro_use] extern crate quicli;
+extern crate clap;
+use clap::{Arg, App};
 
-use quicli::prelude::*;
+fn main() {
+    let matches = App::new("{{project-name}}")
+                          .version("1.0")
+                          .author("{{authors}}")
+                          .about("Howdy, Rust!")
+                          .arg(Arg::with_name("greeting")
+                               .short("g")
+                               .long("greeting")
+                               .default_value("world")
+                               .help("Sets a greeting for this hello program")
+                               .takes_value(true))
+                          .get_matches();
 
-// Add cool slogan for your app here, e.g.:
-#[derive(Debug, StructOpt)]
-struct Cli {
-    #[structopt(long = "greeting", short = "g", default_value = "world")]
-    greeting: String,
-    #[structopt(flatten)]
-    verbosity: Verbosity,
+    let greeting = matches.value_of("greeting").unwrap_or_default();
+    println!("Hello, {}!", greeting);
 }
-
-main!(|args: Cli, log_level: verbosity| {
-    println!("Hello, {}!", args.greeting);
-});
