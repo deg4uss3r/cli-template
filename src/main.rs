@@ -13,7 +13,8 @@ fn main() {
                 .default_value("world")
                 .help("Sets a greeting for this hello program")
                 .takes_value(true),
-        ).get_matches();
+        )
+        .get_matches();
 
     let greeting = matches.value_of("greeting").unwrap_or_default();
     println!("Hello, {}!", greeting);
