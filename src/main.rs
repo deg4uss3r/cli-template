@@ -1,4 +1,5 @@
-#[macro_use] extern crate quicli;
+#[macro_use]
+extern crate quicli;
 
 use quicli::prelude::*;
 
