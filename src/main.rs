@@ -1,21 +1,17 @@
-extern crate clap;
-use clap::{App, Arg};
+use std::error::Error;
+use std::io::Read;
+use std::io::stdin;
+
+fn parse_input(input: String) {
+    //magic for parsing input to a format I need
+}
+
+//more functions for solving the problem!
 
 fn main() {
-    let matches = App::new("{{project-name}}")
-        .version("1.0")
-        .author("{{authors}}")
-        .about("Howdy, Rust!")
-        .arg(
-            Arg::with_name("greeting")
-                .short("g")
-                .long("greeting")
-                .default_value("world")
-                .help("Sets a greeting for this hello program")
-                .takes_value(true),
-        )
-        .get_matches();
+    let mut puzzle_input = String::new();
+        stdio::read_to_string(&mut puzzle_input)?;
 
-    let greeting = matches.value_of("greeting").unwrap_or_default();
-    println!("Hello, {}!", greeting);
+    println!("Part one: {}", );
+    println!("Part two: {}", );
 }

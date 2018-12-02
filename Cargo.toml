@@ -1,7 +1,6 @@
 [package]
-name = "project-name"
+name = "day_"
 version = "0.1.0"
-authors = ["authors"]
+authors = ["ricky@hosfelt.io"]
 
 [dependencies]
-clap = "~2.32"
